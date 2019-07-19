@@ -12,7 +12,7 @@ const Routes = () => (
       path={ApplicationPaths.ApiAuthorizationPrefix}
       component={ApiAuthorizationRoutes}
     />
-    <Redirect to="/home" />
+    <Redirect from="/" exact to="/home" />
   </Switch>
 );
 

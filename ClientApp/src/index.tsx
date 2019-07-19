@@ -5,10 +5,16 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import Dashboard from "./components/layout/Dashboard";
+import Routes from "./components/router/Router";
+import UserContext, { DefaultUser } from "./areas/users/UserContext";
 
 ReactDOM.render(
   <BrowserRouter>
-    <Dashboard />
+    <UserContext.Provider value={DefaultUser}>
+      <Dashboard>
+        <Routes />
+      </Dashboard>
+    </UserContext.Provider>
   </BrowserRouter>,
   document.getElementById("root")
 );
